@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="slimaosp"
+          fetch="https://github.com/SlimAOSP"
+          revision="ten" />
+
+  <remote name="slimaosp-gitlab"
+          fetch="https://gitlab.com/SlimAOSP"
+          revision="ten" />
+
+  <remote name="gitlab"
+          fetch="https://gitlab.com" />
+
+  <!-- Build system -->
+  <project path="build/make" name="build" remote="slimaosp" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="build_soong" remote="slimaosp" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="art" name="art" remote="slimaosp" />
+  <project path="bionic" name="bionic" remote="slimaosp" />
+  <project path="build/blueprint" name="build_blueprint" remote="slimaosp" />
+  <project path="bootable/recovery" name="bootable_recovery" remote="slimaosp" />
+  <project path="platform_testing" name="platform_testing" remote="slimaosp" />
+
+  <!-- External --> 
+  <project path="external/tinycompress" name="external_tinycompress" remote="slimaosp" />
+
+  <!-- Frameworks --> 
+  <project path="frameworks/av" name="frameworks_av" remote="slimaosp" />
+  <project path="frameworks/base" name="frameworks_base" remote="slimaosp" />
+  <project path="frameworks/compile/mclinker" name="frameworks_compile_mclinker" remote="slimaosp" />
+  <project path="frameworks/native" name="frameworks_native" remote="slimaosp" />
+  <project path="frameworks/opt/net/ims" name="frameworks_opt_net_ims" remote="slimaosp" />
+  <project path="frameworks/opt/net/voip" name="frameworks_opt_net_voip" remote="slimaosp" />
+  <project path="frameworks/opt/net/wifi" name="frameworks_opt_net_wifi" remote="slimaosp" />
+  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="slimaosp" />
+
+  <!-- Hardware --> 
+  <project path="hardware/slimaosp/interfaces" name="hardware_slimaosp_interfaces" remote="slimaosp" />
+  <project path="hardware/interfaces" name="hardware_interfaces" remote="slimaosp" />
+
+  <!-- Manifest -->
+  <project path="manifest" name="manifest_slimaosp" remote="slimaosp" />
+
+  <!-- Packages -->
+  <project path="packages/apps/Bluetooth" name="packages_apps_Bluetooth" remote="slimaosp" />
+  <project path="packages/apps/Nfc" name="packages_apps_Nfc" remote="slimaosp" />
+  <project path="packages/apps/PackageInstaller" name="packages_apps_PackageInstaller" remote="slimaosp" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="slimaosp" />
+  <project path="packages/providers/DownloadProvider" name="packages_providers_DownloadProvider" remote="slimaosp" />
+  <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="slimaosp" />
+  <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="slimaosp" />
+  <project path="packages/services/Telephony" name="packages_services_Telephony" remote="slimaosp" />
+
+  <!-- Sepolicy-->
+  <project path="device/slimaosp/sepolicy" name="device_slimaosp_sepolicy" remote="slimaosp" />
+  <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="slimaosp" />
+  <project path="device/qcom/sepolicy-legacy-um" name="device_qcom_sepolicy" remote="slimaosp" revision="ten-legacy-um" />
+
+  <!-- System -->
+  <project path="system/bt" name="system_bt" remote="slimaosp" />
+  <project path="system/core" name="system_core" remote="slimaosp" />
+  <project path="system/extras" name="system_extras" remote="slimaosp" />
+  <project path="system/netd" name="system_netd" remote="slimaosp" />
+  <project path="system/nfc" name="system_nfc" remote="slimaosp" />
+  <project path="system/sepolicy" name="system_sepolicy" remote="slimaosp" />
+  <project path="system/update_engine" name="system_update_engine" remote="slimaosp" />
+  <project path="system/vold" name="system_vold" remote="slimaosp" />
+  <project path="system/tools/hidl" name="system_tools_hidl" remote="slimaosp" />
+
+  <!-- Vendors -->
+  <project path="vendor/slimaosp" name="vendor_slimaosp" remote="slimaosp" />
+   <project path="vendor/gapps" name="vendor_google_gapps" remote="slimaosp-gitlab" clone-depth="1" />
+
+</manifest>
