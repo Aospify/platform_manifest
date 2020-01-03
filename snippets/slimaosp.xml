@@ -37,7 +37,7 @@
 
   <!-- Frameworks --> 
   <project path="frameworks/av" name="frameworks_av" remote="slimaosp" />
-  <project path="frameworks/base" name="frameworks_base" remote="slimaosp" />
+  <project path="frameworks/base" name="frameworks_base" remote="slimaosp-gitlab" />
   <project path="frameworks/compile/mclinker" name="frameworks_compile_mclinker" remote="slimaosp" />
   <project path="frameworks/native" name="frameworks_native" remote="slimaosp" />
   <project path="frameworks/opt/net/ims" name="frameworks_opt_net_ims" remote="slimaosp" />
