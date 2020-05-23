@@ -1,15 +1,13 @@
-![SlimAOSP](https://github.com/SlimAOSP/manifest_slimaosp/blob/ten/banner/SlimAOSP.png)
+# Aospify #
 
-# SlimAOSP #
-
-# The Stock Experience #
+# Pure AOSP #
 
 ### Sync ###
 
 ```bash
 
 # Initialize local repository
-repo init -u https://github.com/SlimAOSP/manifest_slimaosp -b ten
+repo init -u https://github.com/Aospify/platform_manifest -b Q
 
 # Sync
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
@@ -23,7 +21,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 $ . build/envsetup.sh
 
 # Choose a target
-$ lunch slimaosp_$device-userdebug
+$ lunch aospify_$device-userdebug
 
 # Build the code
-$ mka bacon -jX
+$ mka bacon

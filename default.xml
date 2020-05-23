@@ -7,8 +7,16 @@
 
   <remote name="github"
           fetch="https://github.com/" />
+		  
+  <remote name="aospify"
+          fetch="https://github.com/Aospify"
+          revision="Q" />
 
-  <default revision="refs/tags/android-10.0.0_r23"
+  <remote name="pixel"
+          fetch="https://github.com/PixelExperience"
+          revision="ten" />
+
+  <default revision="refs/tags/android-10.0.0_r35"
            remote="aosp"
            sync-j="4"
            sync-c="true"
@@ -761,6 +769,7 @@
   <project path="toolchain/pgo-profiles" name="toolchain/pgo-profiles" groups="pdk" />
   <project path="tools/acloud" name="platform/tools/acloud" groups="tools,vts,projectarch,pdk,tradefed" />
   <project path="tools/adt/idea" name="platform/tools/adt/idea" groups="notdefault,tools" />
+  <project path="tools/apifinder" name="platform/tools/apifinder" groups="pdk,tools" />
   <project path="tools/apksig" name="platform/tools/apksig" groups="pdk,tradefed" />
   <project path="tools/apkzlib" name="platform/tools/apkzlib" groups="pdk,tradefed" />
   <project path="tools/asuite" name="platform/tools/asuite" groups="pdk" />
@@ -794,7 +803,7 @@
   <!-- Add some LineageOS repos -->
   <include name="snippets/lineage.xml" />
 
-  <!-- Add all SlimAOSP repos -->
-  <include name="snippets/slimaosp.xml" />
+  <!-- Add all Aospify repos -->
+  <include name="snippets/aospify.xml" />
 
 </manifest>
