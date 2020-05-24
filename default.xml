@@ -7,14 +7,6 @@
 
   <remote name="github"
           fetch="https://github.com/" />
-		  
-  <remote name="aospify"
-          fetch="https://github.com/Aospify"
-          revision="Q" />
-
-  <remote name="pixel"
-          fetch="https://github.com/PixelExperience"
-          revision="ten" />
 
   <default revision="refs/tags/android-10.0.0_r35"
            remote="aosp"

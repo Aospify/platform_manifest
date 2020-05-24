@@ -1,17 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
+  <remote name="pixel"
+          fetch="https://github.com/PixelExperience"
+          revision="ten" />
+
   <remote name="lineage"
           fetch="https://github.com/LineageOS"
           revision="lineage-17.1" />
 
-  <!-- CodeAurora additions -->
+  <!-- General -->
+  <project path="art" name="art" remote="pixel" />
+  <project path="bionic" name="bionic" remote="pixel" />
+  <project path="build/soong" name="build_soong" remote="pixel" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="build/blueprint" name="build_blueprint" remote="pixel" />
+  <project path="bootable/recovery" name="bootable_recovery" remote="pixel" />
+  <project path="development" name="development" remote="pixel" />
+  <project path="device/custom/sepolicy" name="device_custom_sepolicy" remote="pixel" />
+  <project path="device/qcom/sepolicy-legacy-um" name="device_qcom_sepolicy-legacy-um" remote="pixel" />
+
+  <!-- External -->
   <project path="external/ant-wireless/ant_native" name="android_external_ant-wireless_ant_native" remote="lineage" />
   <project path="external/ant-wireless/ant_service" name="android_external_ant-wireless_ant_service" remote="lineage" />
   <project path="external/ant-wireless/antradio-library" name="android_external_ant-wireless_antradio-library" remote="lineage" />
   <project path="external/connectivity" name="android_external_connectivity" remote="lineage" />
+  <project path="external/e2fsprogs" name="android_external_e2fsprogs" remote="lineage" />
+  <project path="external/exfat" name="android_external_exfat" remote="lineage" />
   <project path="external/json-c" name="android_external_json-c" remote="lineage" />
+  <project path="external/libnfc-nxp" name="android_external_libnfc-nxp" remote="lineage" />
+  <project path="external/libtextclassifier" name="android_external_libtextclassifier" remote="lineage" />
+  <project path="external/ntfs-3g" name="android_external_ntfs-3g" remote="lineage" />
+  <project path="external/selinux" name="android_external_selinux" remote="lineage" />
+  <project path="external/tinyalsa" name="android_external_tinyalsa" remote="lineage" />
+  <project path="external/tinycompress" name="external_tinycompress" remote="pixel" />
   
+  <!-- Frameworks -->
+  <project path="frameworks/av" name="frameworks_av" remote="pixel" />
+
+  <!-- HALs -->  
   <project path="hardware/qcom-caf/apq8084/audio" name="android_hardware_qcom_audio" revision="lineage-17.1-caf-apq8084" remote="lineage" />
   <project path="hardware/qcom-caf/apq8084/display" name="android_hardware_qcom_display" revision="lineage-17.1-caf-apq8084" remote="lineage" />
   <project path="hardware/qcom-caf/apq8084/media" name="android_hardware_qcom_media" revision="lineage-17.1-caf-apq8084" remote="lineage" />
@@ -72,8 +101,29 @@
   <project path="hardware/qcom-caf/sm8150/audio" name="hardware_qcom-caf_sm8150_audio" remote="pixel" />
   <project path="hardware/qcom-caf/sm8150/display" name="hardware_qcom-caf_sm8150_display" remote="pixel" />
   <project path="hardware/qcom-caf/sm8150/media" name="hardware_qcom-caf_sm8150_media" remote="pixel" />
+  <project path="hardware/qcom/audio" name="hardware_qcom_audio" remote="pixel" />
+  <project path="hardware/qcom/bt" name="hardware_qcom_bt" remote="pixel" />
+  <project path="hardware/qcom/display" name="hardware_qcom_display" remote="pixel" />
+  <project path="hardware/qcom/gps" name="hardware_qcom_gps" remote="pixel" />
+  <project path="hardware/qcom/media" name="hardware_qcom_media" remote="pixel" />
+  <project path="hardware/qcom/sdm845/media" name="hardware_qcom_sdm845_media" remote="pixel" />
+  <project path="hardware/qcom/sdm845/data/ipacfg-mgr" name="hardware_qcom_sdm845_data_ipacfg-mgr" remote="pixel" >
+    <linkfile src="os_pickup.bp" dest="hardware/qcom/sdm845/Android.bp" />
+  </project>
+  <project path="hardware/qcom/bootctrl" name="android_hardware_qcom_bootctrl" remote="lineage" />
+  <project path="hardware/qcom/keymaster" name="android_hardware_qcom_keymaster" remote="lineage" />
+  <project path="hardware/qcom/wlan" name="android_hardware_qcom_wlan" remote="lineage" />
   
-  <project path="system/tools/dtbtool" name="android_system_tools_dtbtool" remote="lineage" />
+  <!-- Hardware repos -->  
+  <project path="hardware/interfaces" name="hardware_interfaces" remote="pixel" />
+  <project path="hardware/libhardware" name="hardware_libhardware" remote="pixel" />
+  <project path="hardware/libhardware_legacy" name="hardware_libhardware_legacy" remote="pixel" />
+  <project path="hardware/nxp/nfc" name="hardware_nxp_nfc" remote="pixel" />
+  <project path="hardware/broadcom/libbt" name="android_hardware_broadcom_libbt" remote="lineage" />
+  <project path="hardware/broadcom/nfc" name="android_hardware_broadcom_nfc" remote="lineage" />
+  <project path="hardware/ril" name="android_hardware_ril" remote="lineage" />
+  
+  <!-- CAF / QCOM / NXP repos --> 
   <project path="vendor/codeaurora/telephony" name="android_vendor_codeaurora_telephony" remote="lineage" />
   <project path="vendor/nxp/opensource/interfaces/nfc" name="android_vendor_nxp_interfaces_opensource_nfc" remote="lineage" />
   <project path="vendor/nxp/opensource/pn5xx/halimpl" name="android_vendor_nxp_opensource_halimpl" revision="lineage-17.1-pn5xx" remote="lineage" />
@@ -83,41 +133,31 @@
   <project path="vendor/qcom/opensource/audio" name="android_vendor_qcom_opensource_audio" remote="lineage" />
   <project path="vendor/qcom/opensource/cryptfs_hw" name="android_vendor_qcom_opensource_cryptfs_hw" remote="lineage" />
   <project path="vendor/qcom/opensource/data-ipa-cfg-mgr" name="android_vendor_qcom_opensource_data-ipa-cfg-mgr" remote="lineage" />
+  <project path="vendor/qcom/opensource/dataservices" name="vendor_qcom_opensource_dataservices" remote="pixel" />
+  <project path="vendor/qcom/opensource/fm-commonsys" name="vendor_qcom_opensource_fm-commonsys" remote="pixel" />
   <project path="vendor/qcom/opensource/interfaces" name="android_vendor_qcom_opensource_interfaces" remote="lineage" />  
   <project path="vendor/qcom/opensource/libfmjni" name="android_vendor_qcom_opensource_libfmjni" remote="lineage" />
+  <project path="vendor/qcom/opensource/power" name="vendor_qcom_opensource_power" remote="pixel" />
   <project path="vendor/qcom/opensource/thermal-engine" name="android_vendor_qcom_opensource_thermal-engine" remote="lineage" />
-
-  <!-- Custom additions -->
-  <project path="prebuilts/tools-custom" name="android_prebuilts_tools-lineage" remote="lineage" clone-depth="1" />
-
-  <!-- Hardware repos -->
-  <project path="hardware/broadcom/libbt" name="android_hardware_broadcom_libbt" remote="lineage" />
-  <project path="hardware/broadcom/nfc" name="android_hardware_broadcom_nfc" remote="lineage" />
-  <project path="hardware/qcom/bootctrl" name="android_hardware_qcom_bootctrl" remote="lineage" />
-  <project path="hardware/qcom/keymaster" name="android_hardware_qcom_keymaster" remote="lineage" />
-  <project path="hardware/qcom/wlan" name="android_hardware_qcom_wlan" remote="lineage" />
-  <project path="hardware/ril" name="android_hardware_ril" remote="lineage" />
 
   <!-- Packages repos -->
   <project path="packages/apps/CertInstaller" name="android_packages_apps_CertInstaller" remote="lineage" />
-
-  <!-- External repos -->
-  <project path="external/e2fsprogs" name="android_external_e2fsprogs" remote="lineage" />
-  <project path="external/exfat" name="android_external_exfat" remote="lineage" />
-  <project path="external/libnfc-nxp" name="android_external_libnfc-nxp" remote="lineage" />
-  <project path="external/libtextclassifier" name="android_external_libtextclassifier" remote="lineage" />
-  <project path="external/ntfs-3g" name="android_external_ntfs-3g" remote="lineage" />
-  <project path="external/selinux" name="android_external_selinux" remote="lineage" />
-  <project path="external/tinyalsa" name="android_external_tinyalsa" remote="lineage" />
+  <project path="packages/services/BuiltInPrintService" name="packages_services_BuiltInPrintService" remote="pixel" />
 
   <!-- System repos -->
   <project path="system/bpf" name="android_system_bpf" remote="lineage" />
+  <project path="system/bt" name="system_bt" remote="pixel" />
+  <project path="system/core" name="system_core" remote="pixel" />
+  <project path="system/keymaster" name="system_keymaster" remote="pixel" />
+  <project path="system/sepolicy" name="system_sepolicy" remote="pixel" />
+  <project path="system/tools/dtbtool" name="android_system_tools_dtbtool" remote="lineage" />
   <project path="system/update_engine" name="android_system_update_engine" remote="lineage" />
-
+  <project path="platform_testing" name="platform_testing" remote="pixel" />
+  
   <!-- Prebuilts -->
   <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9" remote="lineage" clone-depth="1" />
   <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9" remote="lineage" clone-depth="1" />
   <project path="prebuilts/r8" name="android_prebuilts_r8" remote="lineage" clone-depth="1" />
-
+  <project path="prebuilts/tools-custom" name="android_prebuilts_tools-lineage" remote="lineage" clone-depth="1" />
 
 </manifest>
