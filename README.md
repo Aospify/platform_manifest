@@ -1,6 +1,7 @@
-# Aospify #
+# Aospify - Pure AOSP #
 
-# Pure AOSP #
+<p align="center">
+<img src="https://i.postimg.cc/3rV8CRPP/Aospify.jpg" >
 
 ### Sync ###
 
@@ -21,7 +22,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 $ . build/envsetup.sh
 
 # Choose a target
-$ lunch aospify_$device-userdebug
+$ lunch aosp_$device-userdebug
 
 # Build the code
 $ mka bacon
