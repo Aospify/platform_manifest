@@ -68,7 +68,8 @@
   <remove-project name="platform/frameworks/av" />
   <remove-project name="platform/frameworks/base" />
   <remove-project name="platform/frameworks/native" />
-
+  <remove-project name="platform/frameworks/opt/net/ims" />
+  <remove-project name="platform/frameworks/opt/telephony" />
 
   <!-- General repos -->
   <remove-project name="kernel/tests" />
@@ -128,6 +129,7 @@
   <remove-project name="platform/packages/screensavers/Basic" />
   <remove-project name="platform/packages/screensavers/PhotoTable" />
   <remove-project name="platform/packages/services/BuiltInPrintService" />
+  <remove-project name="platform/packages/services/Telephony" />
 
   <!-- Prebuilts -->
   <remove-project name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" />
