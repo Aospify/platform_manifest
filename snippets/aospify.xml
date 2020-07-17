@@ -19,6 +19,7 @@
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
   </project>
+  <project path="changelogs" name="changelogs" remote="aospify" />
  
   <!-- External repos -->
   <project path="external/motorola/faceunlock" name="SlimShadys/external_f-ulk" remote="gitlab" />
