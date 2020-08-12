@@ -22,6 +22,7 @@
   <project path="changelogs" name="changelogs" remote="aospify" />
  
   <!-- External repos -->
+  <project path="external/gptfdisk" name="platform_external_gptfdisk" remote="aospify" />
   <project path="external/motorola/faceunlock" name="SlimShadys/external_f-ulk" remote="gitlab" />
 
   <!-- Framework repos -->
