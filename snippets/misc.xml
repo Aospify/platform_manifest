@@ -161,7 +161,6 @@
 
   <!-- System repos -->
   <project path="system/bpf" name="android_system_bpf" remote="lineage" />
-  <project path="system/core" name="system_core" remote="pixel" />
   <project path="system/keymaster" name="system_keymaster" remote="pixel" />
   <project path="system/sepolicy" name="system_sepolicy" remote="pixel" />
   <project path="system/tools/dtbtool" name="android_system_tools_dtbtool" remote="lineage" />

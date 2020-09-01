@@ -45,6 +45,7 @@
 
   <!-- System repos -->
   <project path="system/bt" name="platform_system_bt" remote="aospify" />
+  <project path="system/core" name="platform_system_core" remote="aospify" />
 
   <!-- Vendor repos -->
   <project path="vendor/aosp" name="platform_vendor_aosp" remote="aospify" />
