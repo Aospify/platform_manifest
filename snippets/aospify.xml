@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Remotes -->  
+  <remote name="aospify"
+          fetch="https://github.com/Aospify"
+          revision="R" />
+
+  <!-- Bootable repos -->
+  <project path="bootable/recovery" name="platform_bootable_recovery" remote="aospify" />
+  
+  <!-- Build repos -->
+  <project path="build/make" name="platform_build" remote="aospify" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/blueprint" name="platform_build_blueprint" groups="pdk,tradefed" remote="aospify" />
+  <project path="build/soong" name="platform_build_soong" groups="pdk,tradefed" remote="aospify" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+
+  <!-- External repos -->
+  <project path="external/selinux" name="platform_external_selinux" remote="aospify" />
+  
+  <!-- Framework repos -->
+  <project path="frameworks/av" name="platform_frameworks_av" remote="aospify" />
+  <project path="frameworks/base" name="platform_frameworks_base" remote="aospify" />
+  <project path="frameworks/native" name="platform_frameworks_native" remote="aospify" />
+  
+  <!-- Hardware repos -->
+  <project path="hardware/custom/interfaces" name="platform_hardware_custom_interfaces" remote="aospify" />
+  <project path="hardware/interfaces" name="platform_hardware_interfaces" remote="aospify" />
+  <project path="hardware/libhardware" name="platform_hardware_libhardware" remote="aospify" />
+
+  <!-- Packages -->  
+  <project path="packages/apps/Settings" name="platform_packages_apps_Settings" remote="aospify" />
+
+  <!-- System repos -->  
+  <project path="system/core" name="platform_system_core" remote="aospify" />
+  <project path="system/libufdt" name="platform_system_libufdt" remote="aospify" />
+
+  <!-- Vendor repos -->
+  <project path="vendor/aosp" name="platform_vendor_aosp" remote="aospify" />
+
+</manifest>

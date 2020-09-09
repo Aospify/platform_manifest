@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Remotes -->
+  <remote name="github"
+          fetch="https://github.com/" />
+		  
+  <remote  name="common"
+           fetch="https://github.com/AOSP-Common"
+           revision="11.0"
+           sync-j="16" />
+
+  <!-- Bionic-->
+  <project path="bionic" name="RevengeOS/android_bionic" remote="github" revision="r11.0" />
+
+  <!-- External -->
+  <project path="external/guice" name="LineageOS/android_external_guice" groups="pdk" remote="github" revision="lineage-18.0" />
+
+  <!-- Frameworks -->  
+  <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" remote="common" />
+
+  <!-- CAF HALs -->
+  <project path="hardware/qcom-caf/common" name="PotatoProject-next/hardware_qcom-caf_common" groups="qcom,pdk-qcom" remote="github" revision="d-staging1" >
+    <!-- add guard for AOSP hardware/qcom dir -->
+    <linkfile src="os_pickup_aosp.mk" dest="hardware/qcom/Android.mk" />
+    <!-- for AOSP sdm845, we override os_pickup.mk -->
+    <linkfile src="os_pickup.mk" dest="hardware/qcom/sdm845/Android.mk" />
+    <!-- add guards for CAF repositories -->
+    <!-- <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/apq8084/Android.mk" /> -->
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8916/Android.mk" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8952/Android.mk" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8960/Android.mk" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8974/Android.mk" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8994/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8996/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8996/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8998/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8998/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/sdm845/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sdm845/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/sm8150/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8150/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="vendor/nxp/opensource/pn5xx/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="vendor/nxp/opensource/pn5xx/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="vendor/nxp/opensource/sn100x/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="vendor/nxp/opensource/sn100x/Android.mk" />
+  </project>
+  <project path="hardware/qcom-caf/bt" name="LineageOS/android_hardware_qcom_bt" groups="qcom,pdk-qcom" remote="github" revision="lineage-17.1-caf" />
+  <project path="hardware/qcom-caf/msm8996/audio" name="PotatoProject-next/hardware_qcom_audio" groups="qcom,qcom_audio,pdk-qcom" remote="github" revision="d-staging1-caf-msm8996" />
+  <project path="hardware/qcom-caf/msm8996/display" name="PotatoProject-next/hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" remote="github" revision="d-staging1-caf-msm8996" />
+  <project path="hardware/qcom-caf/msm8996/media" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk-qcom" remote="github" revision="lineage-17.1-caf-msm8996" />
+  <project path="hardware/qcom-caf/msm8998/audio" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk-qcom" remote="github" revision="lineage-18.0-caf-msm8998" />
+  <project path="hardware/qcom-caf/msm8998/display" name="LineageOS/android_hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" remote="github" revision="lineage-18.0-caf-msm8998" />
+  <project path="hardware/qcom-caf/msm8998/media" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk-qcom" remote="github" revision="lineage-18.0-caf-msm8998" />
+  <project path="hardware/qcom-caf/sm8150/audio" name="stx-staging/android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk-qcom" remote="github" revision="11-caf-sm8150" />
+  <project path="hardware/qcom-caf/sm8150/display" name="android_hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" remote="common" revision="11.0-caf-sm8150" />
+  <project path="hardware/qcom-caf/sm8150/media" name="stx-staging/android_hardware_qcom_media" groups="qcom,pdk-qcom" remote="github" revision="11-caf-sm8150" />
+  <project path="hardware/qcom-caf/thermal" name="LineageOS/android_hardware_qcom_thermal" groups="qcom,pdk-qcom" remote="github" revision="lineage-17.1" />
+  <project path="hardware/qcom-caf/vr" name="LineageOS/android_hardware_qcom_vr" groups="qcom,pdk-qcom" remote="github" revision="lineage-17.1" />
+  <project path="hardware/qcom-caf/wlan" name="RevengeOS/android_hardware_qcom-caf_wlan" groups="qcom_wlan,pdk-qcom" remote= "github" revision="r11.0" />
+  
+  <!-- Prebuilts -->
+  <project path="prebuilts/abi-dumps/vndk" name="ArrowOS/android_prebuilts_abi-dumps_vndk" remote="github" revision="arrow-11.0" />
+
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9" remote="github" revision="lineage-17.1" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9" remote="github" revision="lineage-17.1" />
+  <project path="prebuilts/clang/host/linux-x86/clang-proton" name="kdrag0n/proton-clang" remote="github" revision="master" clone-depth="1" />
+
+  <!-- System -->  
+  <project path="system/apex" name="LineageOS/android_system_apex" groups="pdk" remote="github" revision="lineage-18.0" />
+  <project path="system/incremental_delivery" name="LineageOS/android_system_incremental_delivery" groups="pdk" remote="github" revision="lineage-18.0" />
+  <project path="system/sepolicy" name="RevengeOS/android_system_sepolicy" remote="github" revision="r11.0" />
+  <project path="system/vold" name="RevengeOS/android_system_vold" remote="github" revision="r11.0" />
+
+  <!-- Tools -->  
+  <project path="tools/metalava" name="LineageOS/android_tools_metalava" groups="pdk,tools" remote="github" revision="lineage-18.0" />
+  
+    <!-- Qualcomm vendor repos -->
+  <project path="vendor/qcom/opensource/thermal-engine" name="LineageOS/android_vendor_qcom_opensource_thermal-engine" remote="github" revision="lineage-17.1" />
+  <project path="vendor/codeaurora/telephony" name="android_vendor_codeaurora_telephony" remote="common" />
+  <project path="vendor/qcom/opensource/audio" name="yaap/vendor_qcom_opensource_audio" remote="github" revision="eleven" />
+  <project path="vendor/qcom/opensource/commonsys-intf/bluetooth" name="LineageOS/android_vendor_qcom_opensource_bluetooth-commonsys-intf" remote="github" revision="lineage-17.1" />
+  <project path="vendor/qcom/opensource/commonsys/bluetooth_ext" name="RevengeOS/android_vendor_qcom_opensource_bluetooth_ext" remote="github" revision="r11.0" />
+  <project path="vendor/qcom/opensource/commonsys/packages/apps/Bluetooth" name="RevengeOS/android_vendor_qcom_opensource_packages_apps_Bluetooth" remote="github" revision="r11.0" />
+  <project path="vendor/qcom/opensource/commonsys/system/bt" name="RevengeOS/android_vendor_qcom_opensource_system_bt" remote="github" revision="r11.0" />
+  <project path="vendor/qcom/opensource/data-ipa-cfg-mgr" name="stx-staging/android_vendor_qcom_opensource_data-ipa-cfg-mgr" remote="github" revision="11" />
+  <project path="vendor/qcom/opensource/dataservices" name="LineageOS/android_vendor_qcom_opensource_dataservices" remote="github" revision="lineage-17.1" />
+  <project path="vendor/qcom/opensource/interfaces" name="LineageOS/android_vendor_qcom_opensource_interfaces" remote="github" revision="lineage-17.1">
+    <copyfile dest="vendor/qcom/opensource/Android.bp" src="os_pickup.bp" />
+  </project>
+  <project path="vendor/qcom/opensource/power" name="RevengeOS/android_vendor_qcom_opensource_power" groups="qcom,pdk-qcom" remote="github" revision="r10.0" />
+  <project path="vendor/qcom/opensource/vibrator" name="derp-caf/vendor_qcom_opensource_vibrator" remote="github" revision="r11" />
+
+</manifest>
