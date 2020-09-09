@@ -26,6 +26,7 @@
   <project path="external/motorola/faceunlock" name="SlimShadys/external_f-ulk" remote="gitlab" />
 
   <!-- Framework repos -->
+  <project path="frameworks/av" name="platform_frameworks_av" remote="aospify" />
   <project path="frameworks/base" name="platform_frameworks_base" remote="aospify" />
   <project path="frameworks/native" name="platform_frameworks_native" remote="aospify" />
   <project path="frameworks/opt/net/ims" name="platform_frameworks_opt_net_ims" remote="aospify" />

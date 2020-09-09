@@ -38,9 +38,6 @@
   <project path="external/selinux" name="android_external_selinux" remote="lineage" />
   <project path="external/tinyalsa" name="android_external_tinyalsa" remote="lineage" />
   <project path="external/tinycompress" name="external_tinycompress" remote="pixel" />
-  
-  <!-- Frameworks -->
-  <project path="frameworks/av" name="frameworks_av" remote="pixel" />
 
   <!-- HALs -->  
   <project path="hardware/qcom-caf/apq8084/audio" name="android_hardware_qcom_audio" revision="lineage-17.1-caf-apq8084" remote="lineage" />
