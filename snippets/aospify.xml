@@ -31,6 +31,7 @@
   <project path="frameworks/native" name="platform_frameworks_native" remote="aospify" />
   <project path="frameworks/opt/net/ims" name="platform_frameworks_opt_net_ims" remote="aospify" />
   <project path="frameworks/opt/telephony" name="platform_frameworks_opt_telephony" remote="aospify" />
+  <project path="frameworks/opt/vcard" name="platform_frameworks_opt_vcard" remote="aospify" />
 
   <!-- Hardware repos -->
   <project path="hardware/custom/interfaces" name="platform_hardware_custom_interfaces" remote="aospify" />
