@@ -11,7 +11,7 @@
 repo init -u https://github.com/Aospify/platform_manifest -b Q
 
 # Sync
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) --optimized-fetch --prune
 ```
 
 ### Build ###
